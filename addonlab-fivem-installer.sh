@@ -33,9 +33,9 @@ CURRENT_STEP=0
 C_RESET="\033[0m"
 C_BOLD="\033[1m"
 C_DIM="\033[2m"
-C_BRAND="\033[1;36m"     # Cyan - Markenakzent
-C_LOGO="\033[38;5;48m"   # Türkis/Spring-Green - Logo (wie AddonLab-Bild)
-C_ACCENT="\033[1;35m"    # Magenta - Hervorhebung
+C_BRAND="\033[1;36m"     # Cyan
+C_LOGO="\033[38;5;48m"   # Türkis/Spring-Green
+C_ACCENT="\033[1;35m"    # Magenta
 C_OK="\033[1;32m"        # Grün
 C_WARN="\033[1;33m"      # Gelb
 C_ERR="\033[1;31m"       # Rot
@@ -65,7 +65,6 @@ box_line_center() {
     local plain
     plain=$(echo -e "$text" | sed 's/\x1b\[[0-9;]*m//g')
     local len=${#plain}
-    # Innenbreite = BOX_W (genau so viele Zeichen wie Füllzeichen oben/unten)
     local pad=$(( (BOX_W - len) / 2 ))
     [ "$pad" -lt 0 ] && pad=0
     local rpad=$(( BOX_W - len - pad ))
@@ -137,7 +136,6 @@ trap 'on_error $LINENO' ERR
 # Abbruch durch Strg+C (SIGINT) sauber abfangen
 # ------------------------------------------------------------
 on_interrupt() {
-    # ERR-Trap deaktivieren, damit nicht zusätzlich on_error feuert
     trap - ERR
     echo ""
     echo ""
@@ -162,9 +160,6 @@ wait_for_apt() {
     local waited=0
     local timeout=120   # max. 2 Minuten warten, dann trotzdem weiter
 
-    # flock -n versucht, die Sperre kurz selbst zu nehmen.
-    # Klappt das -> niemand hält sie -> wir können weiter.
-    # Klappt es nicht -> ein echter apt/dpkg-Prozess hält sie -> warten.
     while ! flock -n "$lock" true 2>/dev/null; do
         if [ "$waited" -ge "$timeout" ]; then
             warn "$(t 'Zeitüberschreitung - fahre trotzdem fort.' 'Timed out - continuing anyway.')"
@@ -226,7 +221,6 @@ confirm_start() {
 # ------------------------------------------------------------
 detect_distro() {
     if [ -f /etc/os-release ]; then
-        # shellcheck disable=SC1091
         . /etc/os-release
         DISTRO_ID="$ID"
         DISTRO_CODENAME="${VERSION_CODENAME:-}"
@@ -268,8 +262,6 @@ get_password() {
             break
         done
     else
-        # In Subshell mit deaktiviertem pipefail/errexit, damit der
-        # 'broken pipe' von head|tr das Skript nicht abbricht.
         RESULT_PASS="$(set +o pipefail; tr -dc 'A-Za-z0-9' < /dev/urandom 2>/dev/null | head -c 20 || true)"
         ok "$(t 'Passwort generiert.' 'Password generated.')"
     fi
@@ -361,7 +353,6 @@ SQL
 detect_latest_artifact() {
     # Versucht, die neueste Build-URL von der CFX-Seite zu lesen.
     # Gibt bei Erfolg die volle .tar.xz-URL aus, sonst nichts (Rückgabe != 0).
-    # HINWEIS: Gegen die echte Seite testen - HTML-Format kann sich ändern.
     local html latest
     html="$(curl -fsSL "$ARTIFACT_LIST_URL" 2>/dev/null || true)"
     [ -z "$html" ] && return 1
