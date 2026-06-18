@@ -1,0 +1,28 @@
+# AddonLab - Dateien, die NICHT ins Repo gehören
+# AddonLab - files that must NOT go into the repository
+
+# Zugangsdaten / credentials (entstehen beim Ausführen auf dem Server)
+addonlab-credentials.txt
+*credentials*.txt
+
+# Fehler-Protokolle / error logs
+addonlab-error.log
+*.log
+
+# FiveM-Artifacts / heruntergeladene Server-Dateien
+fx.tar.xz
+*.tar.xz
+fivem/
+/home/
+
+# Datenbank-Dumps
+*.sql
+
+# Editor- und System-Dateien
+*.swp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
