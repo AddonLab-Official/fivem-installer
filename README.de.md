@@ -2,6 +2,8 @@
 
 > Richte in wenigen Minuten einen FiveM-Server unter Debian oder Ubuntu ein – Datenbank, Web-Oberfläche und alle Abhängigkeiten inklusive.
 
+🇩🇪 Deutsch | 🇬🇧 [English](README.md)
+
 ---
 
 ## Funktionen
@@ -31,8 +33,8 @@
 Empfohlen wird, das Skript zuerst herunterzuladen und dann auszuführen. So bleibt es voll interaktiv und du kannst die Datei vorher ansehen.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AddonLab-Official/fivem-installer.sh -o fivem-installer.sh
-sudo bash addonlab.sh
+curl -fsSL https://raw.githubusercontent.com/AddonLab-Official/fivem-installer/main/addonlab-fivem-installer.sh -o addonlab-fivem-installer.sh
+sudo bash addonlab-fivem-installer.sh
 ```
 
 ### Lieber erst anschauen?
@@ -40,9 +42,9 @@ sudo bash addonlab.sh
 Sicherheitsbewusst? Herunterladen, durchlesen, dann ausführen:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AddonLab-Official/fivem-installer.sh -o fivem-installer.sh
-less addonlab.sh        # Inhalt ansehen
-sudo bash addonlab.sh   # ausführen, wenn alles passt
+curl -fsSL https://raw.githubusercontent.com/AddonLab-Official/fivem-installer/main/addonlab-fivem-installer.sh -o addonlab-fivem-installer.sh
+less addonlab-fivem-installer.sh        # Inhalt ansehen
+sudo bash addonlab-fivem-installer.sh   # ausführen, wenn alles passt
 ```
 
 ---
@@ -99,3 +101,11 @@ Trage die Datenbank-Zugangsdaten aus `/root/addonlab-credentials.txt` ein, wenn 
 - **Hilfe nötig?** Erstelle ein Issue oder tritt unserer Community bei.
 
 ---
+
+## Lizenz
+
+Veröffentlicht unter der MIT-Lizenz. Details findest du in der Datei [LICENSE](LICENSE).
+
+---
+
+Mit Sorgfalt erstellt von **AddonLab**.
