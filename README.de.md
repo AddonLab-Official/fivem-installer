@@ -108,4 +108,4 @@ Veröffentlicht unter der MIT-Lizenz. Details findest du in der Datei [LICENSE](
 
 ---
 
-Mit Sorgfalt erstellt von **AddonLab**.
+Discord: https://discord.com/invite/RJC6zSmru3
