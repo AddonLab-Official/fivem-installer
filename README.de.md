@@ -2,8 +2,6 @@
 
 > Richte in wenigen Minuten einen FiveM-Server unter Debian oder Ubuntu ein – Datenbank, Web-Oberfläche und alle Abhängigkeiten inklusive.
 
-`~/gaming/services$` **AddonLab** – Gaming Service
-
 ---
 
 ## Funktionen
@@ -33,18 +31,16 @@
 Empfohlen wird, das Skript zuerst herunterzuladen und dann auszuführen. So bleibt es voll interaktiv und du kannst die Datei vorher ansehen.
 
 ```bash
-curl -fsSL https://DEINE-URL/addonlab-fivem-installer.sh -o addonlab.sh
+curl -fsSL https://github.com/AddonLab-Official/fivem-installer.sh -o fivem-installer.sh
 sudo bash addonlab.sh
 ```
-
-> Ersetze `https://DEINE-URL/...` durch den echten Link zu deinem Skript.
 
 ### Lieber erst anschauen?
 
 Sicherheitsbewusst? Herunterladen, durchlesen, dann ausführen:
 
 ```bash
-curl -fsSL https://DEINE-URL/addonlab-fivem-installer.sh -o addonlab.sh
+curl -fsSL https://github.com/AddonLab-Official/fivem-installer.sh -o fivem-installer.sh
 less addonlab.sh        # Inhalt ansehen
 sudo bash addonlab.sh   # ausführen, wenn alles passt
 ```
