@@ -1,5 +1,4 @@
-# AddonLab - Dateien, die NICHT ins Repo gehören
-# AddonLab - files that must NOT go into the repository
+# AddonLab
 
 # Zugangsdaten / credentials (entstehen beim Ausführen auf dem Server)
 addonlab-credentials.txt
