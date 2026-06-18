@@ -108,4 +108,4 @@ Released under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-Made with care by **AddonLab**.
+Discord: https://discord.com/invite/RJC6zSmru3
