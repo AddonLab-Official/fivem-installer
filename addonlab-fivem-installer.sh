@@ -3,20 +3,7 @@
 # ============================================================
 #  AddonLab - FiveM Auto Installer
 #  Für Debian & Ubuntu
-#  Version: 1.2 (Entwurf zum Testen)
-# ============================================================
-#
-#  Ablauf:
-#   - Sprache wählen (DE/EN) + Bestätigung
-#   - System aktualisieren + Abhängigkeiten
-#   - MariaDB installieren  (falls vorhanden -> DB-Setup wird übersprungen)
-#   - Webserver + PHP + phpMyAdmin (falls vorhanden -> übersprungen)
-#   - DB-User anlegen (root + fivem), Passwort generiert oder selbst gewählt
-#   - FiveM-Artifacts nach /home/fivem (Auto-Erkennung + Custom-Fallback)
-#   - Zugangsdaten in /root/addonlab-credentials.txt (chmod 600)
-#   - Abschluss-Zusammenfassung
-#
-#  txAdmin konfiguriert der Nutzer selbst im Browser.
+#  Version: 1.2
 # ============================================================
 
 set -euo pipefail
